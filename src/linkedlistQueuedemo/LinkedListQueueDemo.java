@@ -101,18 +101,12 @@ public class LinkedListQueueDemo
    {
        System.out.println("What is the name of the cat you would like to adopt");
        String adptCat = in.next();
-       System.out.println("we got here"+adptCat);
        System.out.println(cat.empty());
        searchCat(adptCat);
-       System.out.println("we got here1");
        searchShelter(adptCat);
-       System.out.println(cat.empty());
-       System.out.println(shelterPet.empty());
-       System.out.println("we got here2");
        for(LinkedListQueue.Node s:shelterPet)
        {
            System.out.println(s);
-           System.out.println("Inside print");
        }
        holdCat = new LinkedListQueue();
        holdShelter = new LinkedListQueue();
@@ -122,17 +116,16 @@ public class LinkedListQueueDemo
    {
        System.out.println("What is the name of the cat you would like to adopt");
        String adptDog = in.next();
-       System.out.println("we got here"+adptDog);
        System.out.println(cat.empty());
        searchDog(adptDog);
-       System.out.println("we got here 1");
        searchShelter(adptDog);
-       System.out.println("we got here 2");
        for(LinkedListQueue.Node s:shelterPet)
        {
            System.out.println(s);
        }
-       holdShelter = shelterPet;
+       holdDog = new LinkedListQueue();
+       holdShelter = new LinkedListQueue();
+       in.nextLine();
    }
    public void shelter()
    {
