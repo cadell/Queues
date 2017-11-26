@@ -120,4 +120,9 @@ public class LinkedListQueue implements Iterable<LinkedListQueue.Node>
         }
       
    }
+
+    public Node getLast() {
+        return first;
+    }
+   
 }

@@ -67,10 +67,12 @@ public class LinkedListQueueDemo
                }
                case 5:
                {
+                   searchOldest();
                    break;
                }
                case 6:
                {
+                   System.out.println("Eliminating program from mainframe matrix thingg..some crazy stuff!!!!");
                    break;
                }
                default:
@@ -185,6 +187,26 @@ public class LinkedListQueueDemo
            }
        }
        dog = holdDog;
+   }
+   public void searchOldest()
+   {
+       System.out.println("Searching for the oldest animal in the linked list queue");
+       //Queue runs on a first in first out system unlike the stack which works on a last in first out system
+       //This means that the oldest pet in a queue is the one that was put first
+       
+       String last = (String)shelterPet.getLast().toString();
+       System.out.println(last);
+       searchShelter(last);
+       searchCat(last);
+       searchDog(last);
+       for(LinkedListQueue.Node s:shelterPet)
+       {
+           System.out.println(s);
+       }
+       holdDog = new LinkedListQueue();
+       holdCat = new LinkedListQueue();
+       holdShelter = new LinkedListQueue();
+       
    }
    
 }
