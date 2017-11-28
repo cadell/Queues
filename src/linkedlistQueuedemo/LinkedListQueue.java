@@ -116,7 +116,7 @@ public class LinkedListQueue implements Iterable<LinkedListQueue.Node>
 
         @Override
         public String toString() {
-            return (String)data;
+            return data.toString();
         }
       
    }

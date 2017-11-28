@@ -88,50 +88,39 @@ public class LinkedListQueueDemo
    {
        System.out.println("what is the name of the cat you would like to donate");
        String catName = in.next();
-       cat.enqueue(catName);
-       shelterPet.enqueue(catName);
+       Pet catObj = new Pet(catName,"cat");
+       cat.enqueue(catObj);
+       shelterPet.enqueue(catObj);
    }
    
    public void donateDog()
    {
        System.out.println("what is the name of the dog you would like to donate");
        String dogName = in.next();
-       dog.enqueue(dogName);
-       shelterPet.enqueue(dogName);
+       Pet dogObj = new Pet(dogName,"dog");
+       dog.enqueue(dogObj);
+       shelterPet.enqueue(dogObj);
    }
    public void adoptCat()
    {
-       System.out.println("What is the name of the cat you would like to adopt");
-       String adptCat = in.next();
-       System.out.println(cat.empty());
-       searchCat(adptCat);
-       searchShelter(adptCat);
+       Object catHolder = cat.dequeue();
+       System.out.println("you just adopted "+ catHolder+"!!!");
+       searchShelter(catHolder.toString());
        for(LinkedListQueue.Node s:shelterPet)
        {
            System.out.println(s);
        }
-       holdCat = new LinkedListQueue();
-       holdShelter = new LinkedListQueue();
-       in.nextLine();
+       
    }
    public void adoptDog()
    {
-       System.out.println("What is the name of the cat you would like to adopt");
-       String adptDog = in.next();
-       System.out.println(cat.empty());
-       searchDog(adptDog);
-       searchShelter(adptDog);
+       Object dogHolder = dog.dequeue();
+       System.out.println("you just adopted "+ dogHolder+"!!!");
+       searchShelter(dogHolder.toString());
        for(LinkedListQueue.Node s:shelterPet)
        {
            System.out.println(s);
        }
-       holdDog = new LinkedListQueue();
-       holdShelter = new LinkedListQueue();
-       in.nextLine();
-   }
-   public void shelter()
-   {
-   
    }
    
    public void searchCat(String adptCat)
@@ -190,6 +179,10 @@ public class LinkedListQueueDemo
    }
    public void searchOldest()
    {
+       for(LinkedListQueue.Node s:shelterPet)
+       {
+           System.out.println(s);
+       }
        System.out.println("Searching for the oldest animal in the linked list queue");
        //Queue runs on a first in first out system unlike the stack which works on a last in first out system
        //This means that the oldest pet in a queue is the one that was put first ?????
